@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-default-fallba
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False #True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://notes-backend-knfs.onrender.com', '*']
 
 
 # Application definition
