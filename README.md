@@ -30,8 +30,8 @@ Este es un backend funcional para una aplicación de notas, desarrollado con **D
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/notes-app-backend.git
-cd notes-app-backend
+git clone https://github.com/KingZahard01/notes-backend.git
+cd notes-backend
 ```
 
 ### 2. Crea y activa el entorno virtual
@@ -96,7 +96,7 @@ Puedes probar los endpoints usando:
 ## 📁 Estructura del Proyecto
 
 ```
-notes-app-backend/
+notes-backend/
 ├── core/               # Configuración general de Django
 ├── notes/              # App principal con modelos, vistas y serializadores
 ├── manage.py
