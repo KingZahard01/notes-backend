@@ -1,4 +1,3 @@
-![version](https://img.shields.io/badge/version-1.0.0-blue)
 ![django](https://img.shields.io/badge/django-5.2.3-red)
 ![drf](https://img.shields.io/badge/drf-3.16.0-orange)
 
@@ -88,7 +87,7 @@ Ahora puedes acceder a la API en `http://localhost:8000/api/`.
 
 Puedes probar los endpoints usando:
 
-- [`curl`](#)
+- [curl](#)
 - [Postman](https://www.postman.com/)
 - O cualquier cliente HTTP
 
@@ -104,12 +103,6 @@ notes-app-backend/
 ├── requirements.txt
 └── README.md
 ```
-
----
-
-## 👥 Autor
-
-[@KingZahard01](https://github.com/KingZahard01)
 
 ---
 
