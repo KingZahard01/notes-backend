@@ -177,3 +177,164 @@ curl -X PUT http://localhost:8000/api/notes/1/ \
 curl -X DELETE http://localhost:8000/api/notes/1/ \
   -H "Authorization: Token YOUR_TOKEN_HERE"
 ```
+
+---
+
+## 🧪 Puedes peobarla aquí con Postman:
+
+```
+https://notes-backend-knfs.onrender.com
+```
+
+---
+
+## ✅ Endpoints disponibles
+
+| Método    | Ruta               | Descripción                    |
+| --------- | ------------------ | ------------------------------ |
+| POST      | `/api/register/`   | Registro de usuario            |
+| POST      | `/api/login/`      | Iniciar sesión (obtener token) |
+| GET       | `/api/notes/`      | Listar todas las notas         |
+| POST      | `/api/notes/`      | Crear una nota                 |
+| GET       | `/api/notes/{id}/` | Leer una nota específica       |
+| PUT/PATCH | `/api/notes/{id}/` | Actualizar una nota            |
+| DELETE    | `/api/notes/{id}/` | Eliminar una nota              |
+
+---
+
+## 🧭 Paso a paso: Cómo probarlos en Postman
+
+### 🔹 1. Registro de usuario
+
+- **Method:** `POST`
+- **URL:** `https://notes-app-backend.onrender.com/api/register/`
+- **Body (raw, JSON):**
+
+```json
+{
+  "username": "testuser",
+  "password": "testpass123",
+  "email": "test@example.com"
+}
+```
+
+**Esperas una respuesta como:**
+
+```json
+{
+  "username": "testuser"
+}
+```
+
+---
+
+### 🔹 2. Login y obtener el token
+
+- **Method:** `POST`
+- **URL:** `https://notes-app-backend.onrender.com/api/login/`
+- **Body (x-www-form-urlencoded):**
+
+| Key      | Value       |
+| -------- | ----------- |
+| username | testuser    |
+| password | testpass123 |
+
+**Esperas una respuesta como:**
+
+```json
+{
+  "token": "abcd1234567890abcdef1234567890abcdef"
+}
+```
+
+Guarda este token para usarlo en las siguientes llamadas.
+
+---
+
+### 🔹 3. Crear una nota
+
+- **Method:** `POST`
+- **URL:** `https://notes-app-backend.onrender.com/api/notes/`
+- **Headers:**
+  - `Authorization`: `Token abcd1234567890abcdef1234567890abcdef`
+  - `Content-Type`: `application/json`
+- **Body (raw, JSON):**
+
+```json
+{
+  "title": "Mi primera nota",
+  "content": "Este es el contenido de mi nota."
+}
+```
+
+**Esperas una respuesta como:**
+
+```json
+{
+  "id": 1,
+  "title": "Mi primera nota",
+  "content": "Este es el contenido de mi nota.",
+  "created_at": "2025-04-05T12:00:00Z",
+  "updated_at": "2025-04-05T12:00:00Z"
+}
+```
+
+---
+
+### 🔹 4. Listar todas tus notas
+
+- **Method:** `GET`
+- **URL:** `https://notes-app-backend.onrender.com/api/notes/`
+- **Headers:**
+  - `Authorization`: `Token abcd1234567890abcdef1234567890abcdef`
+
+**Esperas una respuesta como:**
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Mi primera nota",
+    "content": "Este es el contenido de mi nota.",
+    ...
+  }
+]
+```
+
+---
+
+### 🔹 5. Leer una nota específica
+
+- **Method:** `GET`
+- **URL:** `https://notes-app-backend.onrender.com/api/notes/1/`
+- **Headers:**
+  - `Authorization`: `Token abcd1234567890abcdef1234567890abcdef`
+
+---
+
+### 🔹 6. Actualizar una nota
+
+- **Method:** `PUT` o `PATCH`
+- **URL:** `https://notes-app-backend.onrender.com/api/notes/1/`
+- **Headers:**
+  - `Authorization`: `Token abcd1234567890abcdef1234567890abcdef`
+  - `Content-Type`: `application/json`
+- **Body (raw, JSON):**
+
+```json
+{
+  "title": "Nota actualizada",
+  "content": "Este es el nuevo contenido."
+}
+```
+
+---
+
+### 🔹 7. Eliminar una nota
+
+- **Method:** `DELETE`
+- **URL:** `https://notes-app-backend.onrender.com/api/notes/1/`
+- **Headers:**
+  - `Authorization`: `Token abcd1234567890abcdef1234567890abcdef`
+
+> La respuesta será vacía (`204 No Content`) si se elimina correctamente.
