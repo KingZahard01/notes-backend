@@ -180,7 +180,7 @@ curl -X DELETE http://localhost:8000/api/notes/1/ \
 
 ---
 
-## 🧪 Puedes peobarla aquí con Postman:
+## 🧪 Puedes probarla aquí con Postman:
 
 ```
 https://notes-backend-knfs.onrender.com
